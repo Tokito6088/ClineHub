@@ -9,13 +9,18 @@
 		display: flex;
 		align-items: center;
 		flex-direction: column;
+		code {
+			font-size: 20px;
+			font-family: sans-serif;
+			color: var(--blue);
+		}
 	}
 	.menuItems {
 		list-style-type: none;
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		gap: 15px;
+		gap: 10px;
 		margin-bottom: 20px;
 		@include md {
 			margin-bottom: 30px;
@@ -24,8 +29,7 @@
 		.menuItem {
 			transition: all ease 0.3s;
 			cursor: pointer;
-			font-size: 14px;
-			// font-size: 50px;
+			font-size: 10px;
 
 			@include md {
 				font-size: 20px;

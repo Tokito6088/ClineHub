@@ -18,8 +18,6 @@ const SearchResult = () => {
 	const [loading, setLoading] = useState(false);
 	const { query } = useParams();
 
-	const navigate = useNavigate();
-
 	const fetchInitialData = () => {
 		setLoading(true);
 		fetchdatafromapi(`/search/multi?query=${query}&page=${pageNum}`).then((res) => {
@@ -53,11 +51,11 @@ const SearchResult = () => {
 			{loading && <Spinner initial={true} />}
 			{!loading && (
 				<ContentWrapper>
-					{data?.results.length > 0 ? (
+					{data?.results?.length > 0 ? (
 						<>
-							<div className='pageTitle'>{`search ${data?.total_results > 1 ? 'results' : 'result'} of '${query}'`}</div>
+							<div className='pageTitle'>{`Search ${data?.total_results > 1 ? 'Results' : 'Result'} Of '${query}'`}</div>
 							<InfiniteScroll className='content' dataLength={data?.results?.length || []} next={fetchNextPageData} hasMore={pageNum <= data.total_pages} loader={<Spinner />}>
-								{data.results.map((item, index) => {
+								{data?.results?.map((item, index) => {
 									if (item.mediaType === 'person') return;
 									return <MovieCard key={index} data={item} fromSearch={true} />;
 								})}

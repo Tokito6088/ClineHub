@@ -29,8 +29,13 @@
 	}
 	.logo {
 		cursor: pointer;
-		img {
-			height: 50px;
+		.logoText {
+			font-size: 20px;
+			color: #fff;
+			font-weight: 800;
+			span {
+				color: var(--yellow);
+			}
 		}
 	}
 	.menuItems {

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import { HiOutlineSearch } from 'react-icons/hi';
 import { SlMenu } from 'react-icons/sl';
 import { VscChromeClose } from 'react-icons/vsc';
@@ -17,8 +17,6 @@ const Header = () => {
 	const [showSearch, setShowSearch] = useState('');
 	const navigate = useNavigate();
 	const location = useLocation();
-
-	const inp = useRef();
 
 	useEffect(() => {
 		window.scrollTo(0, 0);
@@ -54,12 +52,15 @@ const Header = () => {
 
 	const searchQueryHandler = (event) => {
 		if (event.key == 'Enter' && query.length > 0) {
-			navigate(`/search/${query}`);
+			navigate(`/search/${query}/`);
 			setTimeout(() => {
 				setShowSearch(false);
-			}, 1000);
+			}, 300);
 		}
 	};
+	useEffect(() => {
+		searchQueryHandler;
+	}, [query]);
 
 	const navigationHandler = (type) => {
 		if (type === 'movie') {
@@ -74,7 +75,9 @@ const Header = () => {
 		<header className={`header ${mobileMenu ? 'mobileView' : ''} ${show}`}>
 			<ContentWrapper>
 				<div className='logo' onClick={() => navigate('/')}>
-					<img src={logo} alt='' />
+					<div className='logoText'>
+						Cline<span>Hub</span>
+					</div>
 				</div>
 				<ul className='menuItems'>
 					<li className='menuItem' onClick={() => navigationHandler('movie')}>
@@ -96,7 +99,7 @@ const Header = () => {
 				<div className='searchBar'>
 					<ContentWrapper>
 						<div className='searchInput'>
-							<input ref={inp} type='text' placeholder='Search for a Movie or TV shows....' onKeyUp={searchQueryHandler} onChange={(e) => setQuery(e.target.value)} />
+							<input type='text' placeholder='Search for a Movie or TV shows....' onKeyDown={searchQueryHandler} onChange={(e) => setQuery(e.target.value)} />
 							<VscChromeClose onClick={() => setShowSearch(false)} />
 						</div>
 					</ContentWrapper>

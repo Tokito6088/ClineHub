@@ -16,7 +16,7 @@ export const fetchdatafromapi = async (url, params) => {
 		});
 		return data;
 	} catch (err) {
-		console.log(err);
+		console.log('err');
 		return err;
 	}
 };

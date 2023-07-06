@@ -1,7 +1,7 @@
 // CSS
 @import '../../mixins.scss';
 .footer {
-	background-color: var(--black3);
+	background-color: #1c1b1b;
 	padding: 50px 0;
 	color: rgba(255, 255, 255, 0.559);
 	position: relative;
@@ -10,7 +10,7 @@
 		align-items: center;
 		flex-direction: column;
 		code {
-			font-size: 20px;
+			font-size: 17px;
 			font-family: sans-serif;
 			color: var(--blue);
 		}

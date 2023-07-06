@@ -2,7 +2,7 @@
 @import '../../mixins.scss';
 .carousel {
 	.contentWrapper {
-		margin-bottom: 20px;
+		margin-bottom: 10px;
 		position: relative;
 	}
 	.carouselTitle {
@@ -13,7 +13,7 @@
 	}
 	.arrow {
 		font-size: 30px;
-		color: rgb(254, 254, 254);
+		color: #4f4d4d;
 		position: absolute;
 		top: 44%;
 		transform: translateY(-50%);

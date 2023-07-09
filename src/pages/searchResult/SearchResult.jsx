@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import InfiniteScroll from 'react-infinite-scroll-component';
-import { useNavigate } from 'react-router-dom';
 
 import './style.scss';
 
@@ -9,7 +8,6 @@ import { fetchdatafromapi } from '../../utils/api';
 import ContentWrapper from '../../components/contentWrapper/ContentWrapper';
 import MovieCard from '../../components/movieCard/MovieCard';
 import Spinner from '../../components/spinner/Spinner';
-import noResults from '../../assets/no-results.png';
 import PageNotFound from '../404/PageNotFound';
 
 const SearchResult = () => {
@@ -22,22 +20,21 @@ const SearchResult = () => {
 		setLoading(true);
 		fetchdatafromapi(`/search/multi?query=${query}&page=${pageNum}`).then((res) => {
 			setData(res);
-			setPageNum((prev) => prev + 1);
 			setLoading(false);
 		});
 	};
 
 	const fetchNextPageData = () => {
 		fetchdatafromapi(`/search/multi?query=${query}&page=${pageNum}`).then((res) => {
-			if (data?.results) {
+			if (res?.results) {
 				setData({
 					...data,
 					results: [...data?.results, ...res.results],
 				});
+				setPageNum((prev) => prev + 1);
 			} else {
 				setData(res);
 			}
-			setPageNum((prev) => prev + 1);
 		});
 	};
 

@@ -7,7 +7,6 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import './style.scss';
 
 import ContentWrapper from '../contentWrapper/ContentWrapper';
-import logo from '../../assets/movix-logo.svg';
 
 const Header = () => {
 	const [show, setShow] = useState('top');
@@ -52,7 +51,7 @@ const Header = () => {
 
 	const searchQueryHandler = (event) => {
 		if (event.key == 'Enter' && query.length > 0) {
-			navigate(`/search/${query}/`);
+			navigate(`search/${query}`);
 			setTimeout(() => {
 				setShowSearch(false);
 			}, 300);
@@ -98,7 +97,7 @@ const Header = () => {
 			{showSearch && (
 				<div className='searchBar'>
 					<ContentWrapper>
-						<div className='searchInput'>
+						<div className='headerSearchInput'>
 							<input type='text' placeholder='Search for a Movie or TV shows....' onKeyDown={searchQueryHandler} onChange={(e) => setQuery(e.target.value)} />
 							<VscChromeClose onClick={() => setShowSearch(false)} />
 						</div>

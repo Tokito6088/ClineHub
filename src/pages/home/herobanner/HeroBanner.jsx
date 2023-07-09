@@ -18,7 +18,7 @@ const HeroBanner = () => {
 	useEffect(() => {
 		const bg = url.backdrop + data?.results?.[Math.floor(Math.random() * 20)]?.backdrop_path;
 		setBackground(bg);
-	});
+	}, [data]);
 
 	const searchQueryHandler = (event) => {
 		if (event.key == 'Enter' && query.length > 0) {
@@ -38,7 +38,7 @@ const HeroBanner = () => {
 					<div className='heroBannerContent'>
 						<span className='title'> welcome</span>
 						<span className='subtitle'>All You Need to Know In One Place</span>
-						<div className='searchInput'>
+						<div className='heroBannerSearchInput'>
 							<input type='text' placeholder='Search for a Movie or TV shows....' onKeyUp={searchQueryHandler} onChange={(e) => setQuery(e.target.value)} />
 							<button onClick={() => navigate(`/search/${query}`)}>Search</button>
 						</div>

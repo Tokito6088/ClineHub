@@ -10,9 +10,12 @@
 		align-items: center;
 		flex-direction: column;
 		code {
-			font-size: 17px;
+			font-size: 15px;
 			font-family: sans-serif;
 			color: var(--blue);
+			@include md {
+				font-size: 20px;
+			}
 		}
 	}
 	.menuItems {
@@ -29,7 +32,7 @@
 		.menuItem {
 			transition: all ease 0.3s;
 			cursor: pointer;
-			font-size: 10px;
+			font-size: 13px;
 
 			@include md {
 				font-size: 20px;
@@ -69,6 +72,42 @@
 			&:hover {
 				box-shadow: 0 0 0.625em var(--pink);
 				color: var(--pink);
+			}
+		}
+	}
+	.links {
+		display: flex;
+		width: 100%;
+		color: #fff;
+		justify-content: center;
+		align-items: center;
+		li {
+			list-style-type: none;
+			padding: 0 10px;
+			font-size: 30px;
+			a {
+				color: #aba2a2;
+				&:hover {
+					color: #cec7c7;
+				}
+			}
+		}
+	}
+	.getCode {
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		margin-top: 20px;
+		a {
+			color: #fff;
+			font-weight: 700;
+			padding: 15px 40px;
+			border-radius: 7px;
+			font-size: 20px;
+			background-image: var(--gradient);
+			text-decoration: none;
+			&:hover {
+				opacity: 0.8;
 			}
 		}
 	}

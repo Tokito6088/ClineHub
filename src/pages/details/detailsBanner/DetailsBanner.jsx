@@ -49,7 +49,7 @@ const DetailsBanner = ({ video, crew }) => {
 								<div className='content'>
 									<div className='left'>{data.poster_path ? <Img className='posterImg' src={url.backdrop + data.poster_path} /> : <Img className='posterImg' src={PosterFallback} />}</div>
 									<div className='right'>
-										<div className='title'>{`${data.name || data.title} (${dayjs(data?.release_date).format('YYYY')})`}</div>
+										<div className='title'>{`${data.name || data.title}`}</div>
 										<div className='subtitle'>{data?.tagline}</div>
 										<Genres data={_genres} />
 

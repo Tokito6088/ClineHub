@@ -8,18 +8,6 @@ const Footer = () => {
 	return (
 		<footer className='footer'>
 			<ContentWrapper>
-				<ul className='menuItems'>
-					<li className='menuItem'>Terms Of Use</li>
-					<li className='menuItem'>Privacy-Policy</li>
-					<li className='menuItem'>About</li>
-					<li className='menuItem'>Blog</li>
-					<li className='menuItem'>FAQ</li>
-				</ul>
-				<div className='infoText'>this is Moviex Movie Web Application Using react Redux And TMDB api </div>
-				<div className='infoText'>
-					Contect Me Here - <code>Yahyamomin06@gmail.com</code>
-				</div>
-				<div className='infoText'>@ copy right all rights reserved - Yahya</div>
 				<ul className='links'>
 					<li>
 						<a href='https://github.com/Tokito6088' target='_blank'>
@@ -32,11 +20,14 @@ const Footer = () => {
 						</a>
 					</li>
 				</ul>
-				<div className='getCode'>
-					<a href='https://github.com/Tokito6088/ClineHub' target='_blank'>
-						Get Code
+				<div className='infoText'>
+					Contect Me Here -
+					<a className='email' href='mailto:yahyamomin06@gmail.com' target='_blank'>
+						Yahyamomin06@gmail.com
 					</a>
 				</div>
+
+				<div className='infoText'>@ copyRight all rights reserved - Yahya</div>
 			</ContentWrapper>
 		</footer>
 	);

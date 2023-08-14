@@ -100,7 +100,7 @@
 			button {
 				width: 100px;
 				height: 50px;
-				color: #ffffff9d;
+				color: #fff;
 				font-weight: 600;
 				letter-spacing: 1px;
 				outline: none;
@@ -108,14 +108,11 @@
 				border-radius: 0 30px 30px 0;
 				font-size: 16px;
 				cursor: pointer;
-				background-image: linear-gradient(to right, #606c88 0%, #3f4c6b 51%, #606c88 100%);
+				background-color: #00b4d8;
 				text-align: center;
 				transition: 0.5s;
 				background-size: 200% auto;
 
-				&:hover {
-					background-position: right center; /* change the direction of the change here */
-				}
 				@include md {
 					width: 150px;
 					height: 60px;

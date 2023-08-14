@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-image: url(https://www.shutterstock.com/image-illustration/picture-highway-that-passing-through-260nw-1837837225.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 100vh;
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-end;
+        }
+
+        .back img {
+
+            height: 300px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="back">
+        <img src="https://png.pngtree.com/png-clipart/20190516/original/pngtree-super-red-sports-car-png-image_3741361.jpg" alt="">
+    </div>
+</body>
+<script>
+    const car = document.querySelector(".back")
+    let a = 1
+    let anime = setInterval(() => {
+        a = a + 1
+        car.style.marginLeft = a + "%"
+        window.addEventListener("click", () => {
+            clearInterval(anime)
+        })
+    }, 10)
+</script>
+
+</html>

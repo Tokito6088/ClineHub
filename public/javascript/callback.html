@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript callback function</title>
+</head>
+
+<body style="background-color: rgb(66, 63, 63);">
+    <script>
+
+        // this is callback function 
+        // function show() {
+        //     console.log("hello world");
+        // }
+        // show()
+
+        // function hello(callback) {
+        // }
+        // hello(show())
+
+        // ________________________________________________________________________________________________________
+
+
+        // callback hell 
+
+        // function registor(callback) {
+        //     setTimeout(() => {
+        //         console.log("registor end  1 ");
+        //         callback();
+        //     }, 1000);
+        // }
+        // function email(callback) {
+        //     setTimeout(() => {
+        //         console.log("email end  2");
+        //         callback();
+        //     }, 2000);
+        // }
+        // function login(callback) {
+        //     setTimeout(() => {
+        //         console.log("login end 3");
+        //         callback();
+        //     }, 4000);
+        // }
+        // function gotdata() {
+        //     setTimeout(() => {
+        //         console.log("got data 4");
+        //     }, 1000);
+        // }
+
+        // console.log("other code");
+
+        // registor(() => {
+        //     email(() => {
+        //         login(() => {
+        //             gotdata()
+        //         })
+        //     })
+        // })
+
+        // _____________________________________________________________________________________________________________-
+
+        // callback hell fix with promise which we write above
+
+        // function registor() {
+        //     return new Promise((resolve, reject) => {
+        //         setTimeout(() => {
+        //             console.log("registor end  1 ");
+        //             resolve();
+        //         }, 1000)
+        //     })
+        // }
+        // function email() {
+        //     return new Promise((resolve, reject) => {
+        //         setTimeout(() => {
+        //             console.log("email end  2");
+        //             resolve()
+        //         }, 3000);
+        //     })
+
+        // }
+        // function login() {
+        //     return new Promise((resolve, reject) => {
+        //         setTimeout(() => {
+        //             console.log("login end 3");
+        //             resolve()
+        //         }, 2000);
+        //     })
+
+        // }
+        // function gotdata() {
+        //     setTimeout(() => {
+        //         console.log("got data 4");
+        //     }, 1000);
+        // }
+
+        // console.log("other code");
+
+        // registor()
+        //     .then(email)
+        //     .then(login)
+        //     .then(gotdata)
+
+
+        // ______________________________________________________________________________________________________________
+
+
+        // promise with parameters 
+
+        // function getname(name) {
+        //     return new Promise((resolve, reject) => {
+        //         setTimeout(() => {
+        //             console.log("inside name function");
+        //             resolve(name)
+        //         }, 2000);
+        //     });
+        // };
+        // function gethobby(hobby) {
+        //     return new Promise((resolve, reject) => {
+        //         setTimeout(() => {
+        //             console.log("inside hobby function")
+        //             resolve(["cricket", "run", "dance", "reading"])
+        //         }, 1000);
+        //     });
+        // };
+
+        //getname("yahya")  //calling first promise function
+        //  .then((name) => gethobby(name)) // call  second promise function and pass the value
+        //.then((hobby) => console.log(hobby)); //log the value which is inside of second function
+
+
+        //in above code is werry complaxe we can write that code without parameter too 
+
+
+        // ___________________________________________________________________________________________________
+
+
+
+        async function show() {
+            const api = await fetch("demo.json")
+            const data = await api.json()
+            console.log('good bye')
+            return data;
+        }
+        console.log("1")
+
+        let a = show();
+        console.log(a);
+
+        // function hello() {
+        //     return new Promise((resolve, reject) => {
+        //         resolve();
+        //     })
+        // }
+
+        console.log("2")
+        console.log("3")
+        console.log("4")
+        console.log("5")
+
+        // hello().then(show)
+
+    </script>
+</body>
+
+</html>

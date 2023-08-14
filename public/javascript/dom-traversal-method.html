@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>dom traversal method</title>
+</head>
+<style>
+  * {
+    box-sizing: border-box;
+  }
+
+  .outer {
+    width: 80vw;
+    height: 80vh;
+    background-color: green;
+    transition: 1s;
+    overflow: hidden;
+  }
+
+  .inner {
+    width: 70vw;
+    height: 500px;
+    background-color: blue;
+    margin-left: 20px;
+  }
+
+  .inner-show {
+    height: 0vh !important;
+    width: 0vw !important;
+  }
+
+  .A,
+  .B,
+  .C,
+  .D,
+  .E {
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    background-color: yellow;
+    margin-top: 100px;
+  }
+
+  button {
+    padding: 11px 33px;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    color: #eee;
+    background-color: rgb(4, 117, 245);
+    font-size: 17px;
+    letter-spacing: 5px;
+    margin-top: 20px;
+    transition: 1s;
+  }
+
+  .btn {
+    border: 5px solid #fff;
+    box-shadow: 0 0 10px #ea320f;
+  }
+</style>
+
+<body>
+  <div class="outer" id="outer">
+    <div>outer</div>
+    <div class="inner" id="inner">
+      <div>inner</div>
+      <div class="A">A</div>
+      <div class="B">B</div>
+      <div class="C" id="C">C</div>
+      <div class="D">D</div>
+      <div class="E">E</div>
+    </div>
+  </div>
+  <center><button>Click</button></center>
+</body>
+<script>
+  // let a = document.getElementById("inner").parentElement;
+  // a.style.backgroundColor = "red";
+  // console.log(a);
+
+  // let b = document.getElementById("inner").childNodes[3];
+  // console.log(b);
+  // b.style.backgroundColor = "cyan";
+
+  // let c = document.getElementById("outer").firstElementChild;
+  // c.style.backgroundColor = "cyan";
+  // console.log(c);
+
+  // timepass
+  let c = document.getElementById("btn");
+  let d = document.getElementById("outer"),
+    btn = document.querySelector("button")
+
+
+  btn.addEventListener("click", () => {
+    d.classList.toggle("inner-show")
+    btn.classList.toggle("btn")
+  })
+</script>
+
+</html>

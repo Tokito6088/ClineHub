@@ -2,19 +2,20 @@
 @import '../../mixins.scss';
 .footer {
 	background-color: #1c1b1b;
-	padding: 50px 0;
+	padding: 30px 0;
 	color: rgba(255, 255, 255, 0.559);
 	position: relative;
 	.contentWrapper {
 		display: flex;
 		align-items: center;
 		flex-direction: column;
-		code {
+		.email {
 			font-size: 15px;
+			text-decoration: none;
 			font-family: sans-serif;
 			color: var(--blue);
 			@include md {
-				font-size: 20px;
+				font-size: 16px;
 			}
 		}
 	}
@@ -48,10 +49,9 @@
 		opacity: 0.5;
 		text-align: center;
 		max-width: 800px;
-		margin-bottom: 20px;
+		margin-top: 20px;
 		@include md {
 			font-size: 14px;
-			margin-bottom: 30px;
 		}
 	}
 	.socialIcons {
@@ -90,24 +90,6 @@
 				&:hover {
 					color: #cec7c7;
 				}
-			}
-		}
-	}
-	.getCode {
-		width: 100%;
-		display: flex;
-		justify-content: center;
-		margin-top: 20px;
-		a {
-			color: #fff;
-			font-weight: 700;
-			padding: 15px 40px;
-			border-radius: 7px;
-			font-size: 20px;
-			background-image: var(--gradient);
-			text-decoration: none;
-			&:hover {
-				opacity: 0.8;
 			}
 		}
 	}

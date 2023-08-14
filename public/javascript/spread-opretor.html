@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>spread operators</title>
+</head>
+
+<body>
+    <script>
+
+        // how spread operators works 
+        function show(...arg) {
+            console.log(arg);
+        }
+        let arr = [10, 20, 30, "yahya", 40]
+        show(...arr)
+
+
+        // copy or cloning 
+        let arr1 = [10, 20, 30, 40]
+        console.log([...arr1]);
+
+        let arr2 = [...arr1];
+
+        arr1.push("hello world")
+
+        console.log(arr1);
+        console.log(arr2);
+
+        // concat without array.concat method 
+
+        let hi1 = [10, 20, 30, 40]
+
+        let hi2 = [50, 60]
+
+        let hi3 = [...hi1, ...hi2]
+
+        console.log(`this is concationation without concat method ${hi3}`);
+        console.log(hi3);
+
+
+
+
+    </script>
+</body>
+
+</html>

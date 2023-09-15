@@ -1,60 +1,66 @@
 :root {
-	font-family: 'Poppins', sans-serif;
-	font-size: 16px;
-	line-height: 1;
-	font-weight: 500;
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  line-height: 1;
+  font-weight: 500;
 
-	font-synthesis: none;
-	text-rendering: optimizeLegibility;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-	-webkit-text-size-adjust: 100%;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
 
-	--black: #242428;
-	--black2: #041226;
-	--black3: #020c1b;
-	--black-lighter: #1c4b91;
-	--black-light: #1c1b1b;
-	--blue: #9376e0;
-	--pink: #f7d060;
-	--orange: #f89e00;
-	--gradient: linear-gradient(to right, #d4145a, #fbb03b);
-	--yellow: #ffdd95;
+  --black: #242428;
+  --black2: #041226;
+  --black3: #020c1b;
+  --black-lighter: #1c4b91;
+  --black-light: #1c1b1b;
+  --blue: #9376e0;
+  --pink: #f7d060;
+  --orange: #f89e00;
+  --gradient: linear-gradient(to right, #d4145a, #fbb03b);
+  --yellow: #ffdd95;
 }
 
 * {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-	background-color: var(--black);
+  background-color: var(--black);
 }
 
 ::-webkit-scrollbar {
-	display: none;
+  display: none;
 }
 
 .skeleton {
-	position: relative;
-	overflow: hidden;
-	background-color: #52525a;
-	&::after {
-		position: absolute;
-		top: 0;
-		right: 0;
-		bottom: 0;
-		left: 0;
-		transform: translateX(-100%);
-		background-image: linear-gradient(90deg, rgba(#6d6d70, 0) 0, rgba(#6d6d70, 0.2) 20%, rgba(#6d6d70, 0.5) 60%, rgba(#6d6d70, 0));
-		animation: shimmer 1s infinite;
-		content: '';
-	}
+  position: relative;
+  overflow: hidden;
+  background-color: #52525a;
+  &::after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transform: translateX(-100%);
+    background-image: linear-gradient(
+      90deg,
+      rgba(#6d6d70, 0) 0,
+      rgba(#6d6d70, 0.2) 20%,
+      rgba(#6d6d70, 0.5) 60%,
+      rgba(#6d6d70, 0)
+    );
+    animation: shimmer 1s infinite;
+    content: '';
+  }
 
-	@keyframes shimmer {
-		100% {
-			transform: translateX(100%);
-		}
-	}
+  @keyframes shimmer {
+    100% {
+      transform: translateX(100%);
+    }
+  }
 }

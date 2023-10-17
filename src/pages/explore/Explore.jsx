@@ -96,7 +96,7 @@ const Explore = () => {
 				<div className='pageHeader'>
 					<div className='pageTitle'>{mediaType === 'tv' ? 'Explore TV Shows' : 'Explore Movies'}</div>
 					<div className='filters'>
-						<Select isMulti name='genres' value={genre} closeMenuOnSelect={false} options={genresData?.genres} getOptionLabel={(option) => option.name} getOptionValue={(option) => option.id} onChange={onChange} placeholder='Select genres' className='react-select-container genresDD' classNamePrefix='react-select' />
+						<Select isMulti name='genres' value={genre} closeMenuOnSelect={false} options={genresData?.genres} getOptionLabel={(option) => option.name} getOptionValue={(option) => option.id} onChange={onChange} placeholder='Select genres' className='react-select-container genresDD' classNamePrefix='react-select'/>
 						<Select name='sortby' value={sortby} options={sortbyData} onChange={onChange} isClearable={true} placeholder='Sort by' className='react-select-container sortbyDD' classNamePrefix='react-select' />
 					</div>
 				</div>
